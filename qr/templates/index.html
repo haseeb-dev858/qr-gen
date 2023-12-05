@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" type="text/css" href="{% static 'qr/css/style.css'%}" />  
+  <title>QR CODE MAKER</title>
+
+</head>
+<body>
+<p>        </p>
+  <div class="block">
+    <img id="image" src="{% static 'qr/images/image-qr-code.png'%}" alt="">
+    <form method="post" name="data" action="{% url 'generate_qr' %}">
+      {% csrf_token %}
+      <input id ='acceptor' type="text" >
+      <input id="submitor" type="submit">
+    </form>
+  </div>
+</body>
+</html>
